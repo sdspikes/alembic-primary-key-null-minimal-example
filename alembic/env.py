@@ -23,12 +23,15 @@ Base = declarative_base(metadata=mymetadata)
 
 class KeyOnly(Base):
   __tablename__ = 'key_only'
-  id = Column(Integer, primary_key=True)
+  id = Column(Integer, primary_key=True, comment="auto-incrementing key")
 
 
 class KeyAndNullable(Base):
   __tablename__ = 'key_and_nullable'
-  id = Column(Integer, primary_key=True, nullable=False)
+  id = Column(Integer,
+              primary_key=True,
+              nullable=False,
+              comment="auto-incrementing key")
 
 
 # add your model's MetaData object here
